@@ -22,7 +22,7 @@ The `test.py` file is designed to run on your local machine. Follow these steps 
 3. Run test.py as a regular Python script.
 
 ## Synthetic Dataset Details:
-The dataset includes four .jsonl files:
+The dataset includes four (04) '.jsonl' files:
 1. page.jsonl: Simulates the "page" dataset from Wikipedia.
 2. linktarget.jsonl: Simulates the "linktarget" dataset from Wikipedia.
 3. pagelinks.jsonl: Simulates the "pagelinks" dataset from Wikipedia.
