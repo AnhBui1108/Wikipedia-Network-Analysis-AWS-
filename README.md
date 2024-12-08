@@ -16,6 +16,8 @@ The `test.py` file is designed to run on your local machine. Follow these steps 
 
 1. Download the synthetic dataset to your local machine.  
 2. Open `test.py` and update the file path:  
-   Replace `./TestData/` in the line  
+   Replace `./TestData/` in this line with the path where you store the downloaded synthetic dataset
    ```python
    path = f"./TestData/{path}"
+3. Run test.py as a regular Python script.
+
