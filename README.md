@@ -28,7 +28,7 @@ The dataset includes four .jsonl files:
 3. pagelinks.jsonl: Simulates the "pagelinks" dataset from Wikipedia.
 4. redirect.jsonl: Simulates the "redirect" dataset from Wikipedia.
    
-### Dataset Scenarios
+#### Dataset Scenarios
 The dataset covers two scenarios for mutual link pairs:
 
 - Case 1: A → B (Page A links to Page B) and B → A (Page B links back to Page A).
