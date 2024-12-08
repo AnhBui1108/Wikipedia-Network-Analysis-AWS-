@@ -3,10 +3,10 @@
 
 ## Includes:
 1. **Entry Point for EMR Step:** `entrypoint.py`  
-2. **Dependencies:** A `main.zip` file containing:  
+2. **Dependencies for EMR Step:** A `main.zip` file containing:  
    - The driver class: `main.py`  
    - The method class: `method.py`  
-3. **Automated Test Suite:** `test.py`  
+3. **Automated Test Suite:** `Test.py`  
 4. **Synthetic Dataset**  
 5. **README File**
 
