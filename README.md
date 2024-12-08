@@ -21,3 +21,18 @@ The `test.py` file is designed to run on your local machine. Follow these steps 
    path = f"./TestData/{path}"
 3. Run test.py as a regular Python script.
 
+## Synthetic Dataset Details:
+The dataset includes four .jsonl files:
+1. page.jsonl: Simulates the "page" dataset from Wikipedia.
+2. linktarget.jsonl: Simulates the "linktarget" dataset from Wikipedia.
+3. pagelinks.jsonl: Simulates the "pagelinks" dataset from Wikipedia.
+4. redirect.jsonl: Simulates the "redirect" dataset from Wikipedia.
+5. 
+# Dataset Scenarios
+The dataset covers two scenarios for mutual link pairs:
+
+- Case 1: A → B (Page A links to Page B) and B → A (Page B links back to Page A).
+- Case 2: A → D → C → A (Page A links to Page D, Page D redirects to Page C, and Page C links back to Page A).
+For connected components, the dataset includes a basic scenario: Example: A → B → C (Page A connects to Page B, and Page B connects to Page C).
+Note: There are no cycles in the connected components.
+
