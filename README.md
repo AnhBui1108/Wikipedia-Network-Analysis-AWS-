@@ -36,3 +36,5 @@ The dataset covers two scenarios for mutual link pairs:
 For connected components, the dataset includes a basic scenario: Example: A → B → C (Page A connects to Page B, and Page B connects to Page C).
 Note: There are no cycles in the connected components.
 
+## Reflection
+(To be updating today... My eyes are tortured from fixing all the tiny typos I made in the script file)
