@@ -68,8 +68,9 @@ The most headache I 've got are both from Project 1, specifically when computing
 **Question:**
 If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
 
-**Most time consuming part: **
+**Most time consuming part:**
 Adjusting the script file felt like playing an endless game of "Whack-a-Bug".  I lost count of how many times the cluster encountered step failures due to minor mistakes—like a typo or updating the main class but forgetting to update the corresponding methods, and vice versa. I wish I had used VS Code instead of Jupyter Notebook
 
+Overall, I spent about 80% of my time fixing bugs, but it was all worth it. I learned so much from this. 
 ### Ovarall
-I think both projects were excellent. They truly helped me learn a lot about Spark—and also taught me how frustrating it is to wait 40 minutes for a program to stop due to a tiny silly mistake that you made, only to have to run it again and again.
+I think both projects were excellent. They truly helped me learn a lot about Spark, it methods and some tips for debugging. And it also taught me how frustrating it is to wait 40 minutes for a program to stop due to a tiny silly mistake that you made, only to have to run it again and again.
