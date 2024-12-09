@@ -66,7 +66,7 @@ The most headache I 've got are both from Project 1, specifically when computing
 - **Computing mutual links for all page**: I computed mutual links for all pages, including article pages, user pages, and others. This resulted in **~192 million mutual link rows** with **~11 million unique vertices**, taking over **`150 iterations`**, which couldn’t finish within 90 minutes, each iteration took ~35s. However, when I updated my code to compute mutual links only for article pages (page_namespace == 0) it finished within 28minutes.
   
 **Question:**
-- When it takes more than 150 iterations and cannot finish within 90 minutes, is it because it is computing on a large table (~11 million rows instead of~6million rows), leading to a longer tail? Could there be other reasons?
+- When it takes more than 150 iterations and cannot finish within 90 minutes, is it because it is computing on a large table (11 million rows instead of 6million rows), leading to a longer tail? Could there be other reasons?
 - If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
 
 **Most time consuming part:**
