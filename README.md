@@ -55,16 +55,17 @@ I too focused on improving the perfomance and overlooked checking whether my cod
 ### Project 2:
 Learning from Project 1, I carefully considered two logical approaches for finding connected components in this project:
 
-- Approach 1: Create a bidirectional edge table (bidi edge) and join the output of each iteration to this bidi edge. This approach is simple and easy to implement, but it requires joining a table with ~400 million rows in every iteration.
-- Approach 2: Create an adjacency list for each node. For each node in the list, find its component ID and assign it a new component ID based on the smallest value between the node itself and its neighbors. This approach involves joining two smaller tables.
+- **Approach 1**: Create a bidirectional edge table (bidi edge) and join the output of each iteration to this bidi edge. This approach is simple and easy to implement, but it requires joining a table with ~400 million rows in every iteration.
+- **Approach 2**: Create an adjacency list for each node. For each node in the list, find its component ID and assign it a new component ID based on the smallest value between the node itself and its neighbors. This approach involves joining two smaller tables.
 I initially thought Approach 2 would be faster due to the smaller table size, but I was wrong. Approach 1 took ~34 seconds per iteration, while Approach 2 took ~90 seconds per iteration. After reviewing the logs and dashboard, I realized why. In Approach 1, although it joins a 400-million-row table, it allows us to directly perform the join, fully leveraging Spark's parallelism. In contrast, Approach 2 requires multiple steps before joining, which limits parallelism and makes it slower.
 
-### Challenging: The most headache I 've got are both from Project 1, specifically when computing mutual links:
+### Most challenging: 
+The most headache I 've got are both from Project 1, specifically when computing mutual links:
 
-- Incorrect assumption: I initially assumed that all page_namespace = 0. This led to a mutual link table with ~900 million rows, which cost me an entire day to realize and fix.
-- Processing all pages: I computed mutual links for all pages, including article pages, user pages, and others. This resulted in ~192 million mutual link rows with ~11 million unique vertices, taking over 150 iterations, which couldn’t finish within 90 minutes. I used the same logic as yours, with similar iteration times (~32 seconds), but the difference was the number of unique vertices. I then updated my code to compute mutual links only for article pages (page_namespace == 0). After this change, the code worked perfectly.
+- **Incorrect assumption**: I initially assumed that all page_namespace = 0. This led to a mutual link table with ~900 million rows, which cost me an entire day to realize and fix.
+- **Computing mutual links for all page**: I computed mutual links for all pages, including article pages, user pages, and others. This resulted in **~192 million mutual link rows** with **~11 million unique vertices**, taking over **`150 iterations`**, which couldn’t finish within 90 minutes. I used the same logic as yours, with similar iteration times (~32 seconds), but the difference was the number of unique vertices. I then updated my code to compute mutual links only for article pages (page_namespace == 0). After this change, the code worked perfectly.
   
-#### Question:
+**Question:**
 If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
 
 #### Most time consuming part: 
