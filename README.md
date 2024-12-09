@@ -1,5 +1,5 @@
-##LargeScaleDA-P2
-## Submission Details
+
+**Submission Details**
 
 ## Includes:
 1. **Entry Point for EMR Step:** `entrypoint.py`  
@@ -36,7 +36,7 @@ The dataset covers two scenarios for mutual link pairs:
 For connected components, the dataset includes a basic scenario: Example: A → B → C (Page A connects to Page B, and Page B connects to Page C).
 Note: There are no cycles in the connected components.
 
-## Reflection
+### Reflection
 #### Project 1
 This project was interesting. The most challenging part wasn’t the coding but understanding the Wikipedia dataset and figuring out how to run Spark on both interactive and non-interactive EMR clusters.
 
