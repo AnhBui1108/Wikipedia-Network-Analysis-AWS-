@@ -63,10 +63,11 @@ I initially thought Approach 2 would be faster due to the smaller table size, bu
 The most headache I 've got are both from Project 1, specifically when computing mutual links:
 
 - **Incorrect assumption**: I initially assumed that all page_namespace = 0. This led to a mutual link table with ~900 million rows, which cost me an entire day to realize and fix.
-- **Computing mutual links for all page**: I computed mutual links for all pages, including article pages, user pages, and others. This resulted in **~192 million mutual link rows** with **~11 million unique vertices**, taking over **`150 iterations`**, which couldn’t finish within 90 minutes. I used the same logic as yours, with similar iteration times (~32 seconds), but the difference was the number of unique vertices. I then updated my code to compute mutual links only for article pages (page_namespace == 0). After this change, the code worked perfectly.
+- **Computing mutual links for all page**: I computed mutual links for all pages, including article pages, user pages, and others. This resulted in **~192 million mutual link rows** with **~11 million unique vertices**, taking over **`150 iterations`**, which couldn’t finish within 90 minutes, each iteration took ~35s. However, when I updated my code to compute mutual links only for article pages (page_namespace == 0) it finished within 28minutes.
   
 **Question:**
-If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
+- When it takes more than 150 iterations and cannot finish within 90 minutes, is it because it is computing on a large table (~11 million rows instead of~6million rows), leading to a longer tail? Could there be other reasons?
+- If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
 
 **Most time consuming part:**
 Adjusting the script file felt like playing an endless game of "Whack-a-Bug".  I lost count of how many times the cluster encountered step failures due to minor mistakes—like a typo or updating the main class but forgetting to update the corresponding methods, and vice versa. I wish I had used VS Code instead of Jupyter Notebook
