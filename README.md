@@ -51,3 +51,5 @@ I too focused on improving the perfomance and overlooked checking whether my cod
 #### For projects in general
 - Ensure the code meets requirements before focusing on optimization.
 - To improve performance, explore new logic, not just different methods
+
+### project 2: tobe update
