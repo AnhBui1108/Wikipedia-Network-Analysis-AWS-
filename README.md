@@ -44,10 +44,10 @@ The most enjoyable part was improving performance. My first attempt took about 6
 I too focused on improving the perfomance and overlooked checking whether my code met all project requirements, which cost me some points. However, this process taught me a lot about Lazy evolution, paralle, bottelnech I/O, how spark method working, Spark UI and how to read the dash. These literally helps handle the midterm effectively. Overall, it was worth the effort.
 
 ##### Key Learnings:
-##### For Spark
+** For Spark
 - Broadcast joins and repartitioning didn’t significantly help for this project.
 - Cache intermedate - that needs to be resused mutiple times significantly improves performance. A HUG BIG NOTE ### `Persist()` is not an action—it doesn’t trigger computation.
 - Spark is lazily evaluated; for example, `.show(n=20)` computes only the first 20 rows.
-###### For projects in general
+*** For projects in general
 - Ensure the code meets requirements before focusing on optimization.
 - To improve performance, explore new logic, not just different methods
