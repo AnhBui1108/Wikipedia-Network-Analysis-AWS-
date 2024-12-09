@@ -37,4 +37,6 @@ For connected components, the dataset includes a basic scenario: Example: A → 
 Note: There are no cycles in the connected components.
 
 ## Reflection
-(To be updating today... My eyes are tortured from fixing all the tiny typos I made in the script file)
+(To be upating...)
+Project 1:
+This is th
