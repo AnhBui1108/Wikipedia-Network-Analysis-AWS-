@@ -29,12 +29,13 @@ The dataset includes four (04) '.jsonl' files:
 4. redirect.jsonl: Simulates the "redirect" dataset from Wikipedia.
    
 #### Dataset Scenarios
-The dataset covers two scenarios for mutual link pairs:
+The dataset covers several scenarios for mutual link pairs:
 
 - Case 1: A → B (Page A links to Page B) and B → A (Page B links back to Page A).
-- Case 2: A → D → C → A (Page A links to Page D, Page D redirects to Page C, and Page C links back to Page A).
-For connected components, the dataset includes a basic scenario: Example: A → B → C (Page A connects to Page B, and Page B connects to Page C).
-Note: There are no cycles in the connected components.
+- Case 2: Page A links to Page D, Page D redirects to Page C, and Page C links back to Page A => A-C form a mutual links pair
+- Case 3: A links to B, B redirects to C, and A links to C. This will help check if my program can detect the case when page A has multiple ways to link to page C (the frequency of A-C = 2), but no mutual links exist.ist.
+
+For connected components, the dataset includes cases where one connected component covers 80% of the nodes (similar to a real-world network). This connected component also contains cycles.
 
 ### Reflection
 #### Project 1
@@ -46,11 +47,12 @@ I too focused on improving the perfomance and overlooked checking whether my cod
 #### Key Learnings:
 **For Spark**
 - Broadcast joins and repartitioning didn’t significantly help for this project.
-- Cache intermedate - that needs to be resused mutiple times significantly improves performance. A HUG BIG NOTE ### `Persist()` is not an action—it doesn’t trigger computation.
+- Cache intermedate - that needs to be resused mutiple times significantly improves performance. A HUGE BIG NOTE ### `Persist()` is not an action—it doesn’t trigger computation.
 - Spark is lazily evaluated; for example, `.show(n=20)` computes only the first 20 rows.
 **For projects in general**
 - Ensure the code meets requirements before focusing on optimization.
-- To improve performance, explore new logic, not just different methods
+- To improve performance, also try new logic, new approach, not just different methods
+- Stick to the debugging plan and take it seriously: find a chunk of code that has the biggest impact -> create a list of possible reasons for the issue -> develop a plan to determine if each reason is valid or not -> and check them one by one. This time, I did had a test plan, but I didn’t follow it seriously. Sometimes, I ran the code repeatedly without clearly specifying the expected output or how to identify the root cause of the bug.
 
 #### Project 2:
 Learning from Project 1, I carefully considered two logical approaches for finding connected components in this project:
@@ -70,8 +72,9 @@ The most headache I 've got are both from Project 1, specifically when computing
 - If Page A and Page B have mutual links, but neither is an article page (page_namespace != 0), are they still included in the mutual link table?
 
 **Most time consuming part:**
-Adjusting the script file felt like playing an endless game of "Whack-a-Bug".  I lost count of how many times the cluster encountered step failures due to minor mistakes—like a typo or updating the main class but forgetting to update the corresponding methods, and vice versa. I wish I had used VS Code instead of Jupyter Notebook
+Adjusting the script file felt like playing an endless game of "Whack-a-Bug".  I lost count of how many times the cluster encountered step failures due to minor mistakes—like a typo or updating the main class but forgetting to update the corresponding methods, and vice versa. I wish I had used VS Code instead of Jupyter Notebook 
+-->>> UPDATED: I switched to VS Code after receiving your feedback on my first submission, and it has been such a premium experience!
 
 Overall, I spent about 80% of my time fixing bugs, but it was all worth it. I learned so much from this. 
 ### Ovarall
-I think both projects were excellent. They truly helped me learn a lot about Spark, it methods and some tips for debugging. And it also taught me how frustrating it is to wait 40 minutes for a program to stop due to a tiny silly mistake that you made, only to have to run it again and again.
+I think both projects were excellent. They truly helped me learn a lot about Spark, it methods and some tips for debugging. And it also taught me how frustrating it is to wait 40 minutes for a program to stop due to a tiny silly mistake that I made, only to have to run it again and again.
