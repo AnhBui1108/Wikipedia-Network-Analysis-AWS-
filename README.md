@@ -49,14 +49,14 @@ I too focused on improving the perfomance and overlooked checking whether my cod
 - Broadcast joins and repartitioning didn’t significantly help for this project.
 - Cache intermedate - that needs to be resused mutiple times significantly improves performance. A HUGE BIG NOTE ### `Persist()` is not an action—it doesn’t trigger computation.
 - Spark is lazily evaluated; for example, `.show(n=20)` computes only the first 20 rows.
-- 
+  
 **For projects in general**
 - Ensure the code meets requirements before focusing on optimization.
 - To improve performance, also try new logic, new approach, not just different methods
 - Stick to the debugging plan and take it seriously:
-        - Find a chunk of code that has the biggest impact.
-        - Create a list of possible reasons for the issue.
-        - Has a plan to determine if each reason is valid or not -> and check them one by one.
+        + Find a chunk of code that has the biggest impact.
+        + Create a list of possible reasons for the issue.
+        + Has a plan to determine if each reason is valid or not -> and check them one by one.
 This time, I did had a test plan, but I didn’t follow it seriously. Sometimes, I ran the code repeatedly without clearly specifying the expected output or how to identify the root cause of the bug.
 
 #### Project 2:
