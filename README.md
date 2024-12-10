@@ -44,7 +44,7 @@ This project was interesting. The most challenging part wasn’t the coding but 
 The most enjoyable part was improving performance. My first attempt took about 60 minutes, meeting the requirement, but I aimed to reduce it to 20 minutes or less. I tried several strategies: broadcast joins, repartitioning, and writing code to fully utilize Spark's parallelism to optimize two major tasks—joining with pagelinks and computing unique mutual link pairs.
 I too focused on improving the perfomance and overlooked checking whether my code met all project requirements, which cost me some points. However, this process taught me a lot about Lazy evolution, paralle, bottelnech I/O, how spark method working, Spark UI and how to read the dash. These literally helps handle the midterm effectively. Overall, it was worth the effort.
 
-#### Key Learnings:
+### Key Learnings:
 **For Spark**
 - Broadcast joins and repartitioning didn’t significantly help for this project.
 - Cache intermedate - that needs to be resused mutiple times significantly improves performance. A HUGE BIG NOTE ### `Persist()` is not an action—it doesn’t trigger computation.
