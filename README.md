@@ -56,6 +56,8 @@ I too focused on improving the perfomance and overlooked checking whether my cod
 - Stick to the debugging plan and take it seriously:
   - Find a chunk of code that has the biggest impact.
   - Create a list of possible reasons for the issue.
+  - Have a plan to determine if each reason is valid or not, and check them one by one.
+    
 This time, I did had a test plan, but I didn’t follow it seriously. Sometimes, I ran the code repeatedly without clearly specifying the expected output or how to identify the root cause of the bug.
 
 #### Project 2:
