@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import unittest
 
 import pyspark 
@@ -14,15 +8,7 @@ from pyspark.sql import (
     SparkSession,
 )
 
-
-# In[2]:
-
-
 from methods import create_mutual_links, connected_components
-
-
-# In[3]:
-
 
 class DataIOSynth:
     def __init__(self, spark):
@@ -38,10 +24,6 @@ def read_json(spark, path):
     path=f"./TestData/{path}"
     return spark.read.json(path)
 
-
-# In[4]:
-
-
 exp_links= frozenset({
     frozenset([1,2]),
     frozenset([2, 8]),
@@ -53,19 +35,11 @@ exp_links= frozenset({
     frozenset([4, 10])})
     
 
-
-# In[5]:
-
-
 exp_components = frozenset({
     frozenset([1, 2, 4 ,5, 8, 7, 10]),
     frozenset([11, 12])
 })
     
-
-
-# In[6]:
-
 
 class TestMethods(unittest.TestCase):
     def test_create_links_and_component(self):
@@ -114,11 +88,3 @@ if __name__ == '__main__':
     unittest.main(argv=[''], exit=False)
             
             
-        
-
-
-# In[ ]:
-
-
-
-
