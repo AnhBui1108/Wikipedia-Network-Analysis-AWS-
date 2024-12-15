@@ -14,3 +14,10 @@ Total points: 251/350 points
 Your code is very fast, you've shown me that you got to know Spark quite well
 over the semester. Fix your test suite and write the reflection and you're
 good. Be sure to include sufficient detail in your reflection.
+
++4 for corrections
++25 for reflection
++10 for better tests
++60 for a fully working test suite
+
+Updated score: 350/350
