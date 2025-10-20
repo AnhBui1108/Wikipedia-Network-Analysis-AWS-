@@ -1,5 +1,4 @@
 
-**Submission Details**
 
 ## Includes:
 1. **Entry Point for EMR Step:** `entrypoint.py`  
